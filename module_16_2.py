@@ -12,8 +12,7 @@ async def read_admin() -> dict:
     return {"message": "Вы вошли как администратор"}
 
 @app.get("/user/{user_id}")
-async def read_user(user_id: Annotated[int, Path(ge=1, le=100, description='Enter User ID')])\
-        -> dict:
+async def read_user(user_id: Annotated[int, Path(ge=1, le=100, description='Enter User ID')]) -> dict:
     return {"message": f"Вы вошли как пользователь № {user_id}"}
 
 @app.get("/user/{username}/{age}")
